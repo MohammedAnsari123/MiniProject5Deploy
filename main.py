@@ -13,8 +13,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import LabelEncoder
 
-with open("modelA.pkl", "rb") as f:
-    model = pkl.load(f)
 
 
 st.sidebar.title("Side Bar")
@@ -174,6 +172,9 @@ def Currency_Converter():
 
 
 def Supervised():
+    with open("modelA.pkl", "rb") as f:
+        model = pkl.load(f)
+
     st.subheader("Salary")
 
     df = pd.read_csv("Salary_dataset.csv")
@@ -235,6 +236,9 @@ def Supervised():
 
 
 def Unsupervised():
+    with open("modelB.pkl", "rb") as f:
+        model = pkl.load(f)
+
     st.subheader("Mall")
 
     df = pd.read_csv("Mall_Customers.csv")
@@ -286,7 +290,11 @@ def Unsupervised():
 
     if st.button("Predict Customer Cluster"):
         predict_cluster = model.predict(input_array)
-        st.write(f"Predicted Cluster: {predict_cluster[0]}")
+        # st.write(f"Predicted Cluster: {predict_cluster[0]}")
+        if predict_cluster == 0:
+            st.write("User Are not visiting")
+        else:
+            st.write(f"User Are Visiting {predict_cluster[0]} Time")
 
 
 if option == "Home":
