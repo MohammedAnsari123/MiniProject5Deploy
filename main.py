@@ -61,7 +61,7 @@ def home():
 
     if ml_algo == "Linear":
         st.write("Continuous flow of data (y = mx + b) linear equation")
-        st.image("Linear.png")
+        st.image("Linear.png", width = 600)
         st.code("""
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
@@ -71,7 +71,7 @@ ypred = lr.predict(x)
 
     elif ml_algo == "Logistic":
         st.write("In Logistic Regression, sigmoid function is udes range of the functions is 0 to 1 f(X) = (1, 0)")
-        st.image("logistic.jpg")
+        st.image("logistic.jpg", width = 600)
         st.code("""
 from sklearn.linear_model import LogisticRegression
 lr = LogisticRegression()
@@ -81,7 +81,7 @@ ypred = lr.predict(X)
 
     elif ml_algo == "Random Forest":
         st.write("Multiple Decision Tree")
-        st.image("RF.png")
+        st.image("RF.png", width = 600)
         st.code("""
 from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier()
@@ -91,7 +91,7 @@ ypred = rf.predict(x)
 
     elif ml_algo == "Decision Tree":
         st.write("Used for both classification and regression.")
-        st.image("DT.png")
+        st.image("DT.png", width = 600)
         st.code("""
 from sklearn.tree import DecisionTreeClassifier
 dt = DecisionTreeClassifier()
@@ -101,7 +101,7 @@ ypred = dt.predict(x)
 
     elif ml_algo == "KNN":
         st.write("K Nearest Neighbors")
-        st.image("KNN.png")
+        st.image("KNN.png", width = 600)
         st.code("""
 from sklearn.neighbors import KNeighborsClassifier
 kn = KNeighborsClassifier()
@@ -111,7 +111,7 @@ ypred = kn.predict(x)
 
     elif ml_algo == "KMeans":
         st.write("Create a small small group of data")
-        st.image("KMeans.png")
+        st.image("KMeans.png", width = 600)
         st.code("""
 from sklearn.cluster import KMeans
 inertia = []
